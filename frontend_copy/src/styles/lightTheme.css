@@ -1,0 +1,20 @@
+:root {
+  --bg-color: #f8f9fa;
+  --text-color: #212529;
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --border-color: #dee2e6;
+  --card-bg: #ffffff;
+  --modal-bg: #ffffff;
+  --table-header-bg: #e9ecef;
+  --table-row-even: #f8f9fa;
+  --table-row-odd: #ffffff;
+  --active-tab-color: #007bff;
+  --positive-change: #28a745;
+  --negative-change: #dc3545;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}

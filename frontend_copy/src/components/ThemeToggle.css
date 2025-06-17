@@ -1,0 +1,39 @@
+.theme-toggle {
+  display: flex;
+  align-items: center;
+}
+
+.theme-toggle button {
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  padding: 5px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle button:hover {
+  background-color: var(--border-color);
+}
+
+/* For light theme */
+.light .theme-toggle button {
+  border-color: #ced4da;
+}
+
+.light .theme-toggle button:hover {
+  background-color: #f1f3f5;
+}
+
+/* For dark theme */
+.dark .theme-toggle button {
+  border-color: #495057;
+}
+
+.dark .theme-toggle button:hover {
+  background-color: #343a40;
+}
