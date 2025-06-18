@@ -42,7 +42,7 @@ export const updateStudent = async (id, studentData) => {
 };
 
 export const deleteStudent = async (id) => {
-  const response = await fetch(`${API_BASE_URL}/students/${id}`, {
+  const response = await fetch(`${API_BASE_URL}/students/delete/${id}`, {
     method: 'DELETE',
   });
   return handleResponse(response);

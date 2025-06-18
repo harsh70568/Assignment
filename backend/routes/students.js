@@ -15,7 +15,7 @@ router.get('/:id', studentController.getStudentProfile);
 router.put('/:id', studentController.updateStudent);
 
 // Delete a student
-router.delete('/:id', studentController.deleteStudent);
+router.delete('/delete/:id', studentController.deleteStudent);
 
 // Download students as CSV
 router.get('/download/csv', studentController.downloadStudentsCSV);

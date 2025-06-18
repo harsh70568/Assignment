@@ -32,10 +32,10 @@ const ProblemStats = ({ studentId, daysFilter, initialData, heatmapData }) => {
   };
 
   const processData = (data) => {
-    setProblems(data.problemsSolved);
-    setStats(data.stats);
-    setRatingDistribution(data.ratingDistribution);
-    setHeatmap(data.submissionHeatmap);
+    setProblems(data.problemsSolved ?? []);
+    setStats(data.stats ?? []);
+    setRatingDistribution(data.ratingDistribution ?? []);
+    setHeatmap(data.submissionHeatmap ?? []);
   };
 
   if (loading) {
