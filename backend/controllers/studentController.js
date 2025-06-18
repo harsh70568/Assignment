@@ -23,6 +23,11 @@ exports.createStudent = async (req, res) => {
 
   try {
     const newStudent = await student.save();
+
+    // Trigger immediate Codeforces sync after creation
+    const { syncCodeforcesDataForStudent } = require('../services/codeforcesService');
+    await syncCodeforcesDataForStudent(newStudent._id);
+
     res.status(201).json(newStudent);
   } catch (err) {
     res.status(400).json({ message: err.message });
@@ -70,7 +75,7 @@ exports.deleteStudent = async (req, res) => {
     const student = await Student.findById(req.params.id);
     if (!student) return res.status(404).json({ message: 'Student not found' });
 
-    await student.remove();
+    await student.deleteOne(); 
     await CodeforcesData.deleteOne({ student: req.params.id });
     
     res.json({ message: 'Student deleted' });
