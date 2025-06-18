@@ -29,8 +29,14 @@ const ContestHistory = ({ studentId, daysFilter, initialData }) => {
   };
 
   const processData = (data) => {
-    setContests(data.contestHistory ?? []);
-    setRatingGraph(data.ratingGraph ?? []);
+    setContests(data ?? []);
+
+    // For rating graph, prepare it from this contest array if needed
+    const graphData = (data ?? []).map(contest => ({
+      date: contest.date,
+      rating: contest.newRating
+    }));
+    setRatingGraph(graphData);
   };
 
   if (loading) {

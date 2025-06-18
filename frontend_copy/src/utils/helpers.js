@@ -11,7 +11,7 @@ export const getHeatmapData = (data, days) => {
   // Group data by date
   const submissionsByDate = {};
   data.forEach(item => {
-    const dateStr = item.date.toISOString().split('T')[0];
+    const dateStr = new Date(item.date).toISOString().split('T')[0];
     submissionsByDate[dateStr] = (submissionsByDate[dateStr] || 0) + 1;
   });
 
