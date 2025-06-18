@@ -125,7 +125,6 @@ const StudentProfile = () => {
           <ProblemStats 
             studentId={id} 
             daysFilter={problemDaysFilter} 
-            initialData={codeforcesData?.problemsSolved}
             heatmapData={codeforcesData?.submissionHeatmap}
           />
         </div>
