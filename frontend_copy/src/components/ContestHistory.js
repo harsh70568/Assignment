@@ -29,8 +29,8 @@ const ContestHistory = ({ studentId, daysFilter, initialData }) => {
   };
 
   const processData = (data) => {
-    setContests(data.contestHistory);
-    setRatingGraph(data.ratingGraph);
+    setContests(data.contestHistory ?? []);
+    setRatingGraph(data.ratingGraph ?? []);
   };
 
   if (loading) {
