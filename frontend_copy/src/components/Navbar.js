@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { ThemeContext } from '../contexts/ThemeContext';
-import ThemeToggle from './ThemeToggle';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -13,7 +12,6 @@ const Navbar = () => {
         <Link to="/" className="navbar-brand">
           Student Progress
         </Link>
-        <ThemeToggle />
       </div>
     </nav>
   );
