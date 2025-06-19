@@ -9,11 +9,7 @@ const ContestHistory = ({ studentId, daysFilter, initialData }) => {
   const [loading, setLoading] = useState(!initialData);
 
   useEffect(() => {
-    if (initialData) {
-      processData(initialData);
-    } else {
-      loadData();
-    }
+    loadData()
   }, [studentId, daysFilter]);
 
   const loadData = async () => {
@@ -29,13 +25,10 @@ const ContestHistory = ({ studentId, daysFilter, initialData }) => {
   };
 
   const processData = (data) => {
-    setContests(data ?? []);
+    const contestList = Array.isArray(data?.contestHistory) ? data.contestHistory : [];
+    setContests(contestList);
 
-    // For rating graph, prepare it from this contest array if needed
-    const graphData = (data ?? []).map(contest => ({
-      date: contest.date,
-      rating: contest.newRating
-    }));
+    const graphData = Array.isArray(data?.ratingGraph) ? data.ratingGraph : [];
     setRatingGraph(graphData);
   };
 
