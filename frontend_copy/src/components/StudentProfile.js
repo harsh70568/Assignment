@@ -104,7 +104,6 @@ const StudentProfile = () => {
           <ContestHistory 
             studentId={id} 
             daysFilter={contestDaysFilter} 
-            initialData={codeforcesData?.contestHistory}
           />
         </div>
       )}
